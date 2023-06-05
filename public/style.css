@@ -2,14 +2,11 @@
 
 html, body {
   font-family: 'Poppins', sans-serif;
+  margin: 15px;
 }
 
 img, video {
   width: 100%
-}
-
-p {
-  text-align: justify;
 }
 
 h5 {
