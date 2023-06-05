@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+}
+
 img, video {
   width: 100%
 }
@@ -43,9 +49,9 @@ mjx-container > * {
 }
 
 .subtitle {
-
  text-align: center;
  font-size: small;
+ margin-bottom: 50px;
 }
 
 .note {
