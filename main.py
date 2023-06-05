@@ -69,12 +69,12 @@ config_stationary = config_free.copy()
 config_stationary['x_0'] = 0
 config_stationary['k'] = 0
 
-render('./animations/free.mp4', config_free)
-render('./animations/tunnel.mp4', config_tunnel)
-render('./animations/double.mp4', config_double)
-render('./animations/barrier.mp4', config_barrier)
-render('./animations/oscillator.mp4', config_oscillator)
-render('./animations/quartic.mp4', config_quartic)
-render('./animations/stationary.mp4', config_stationary)
+render('./public/animations/free.mp4', config_free)
+render('./public/animations/tunnel.mp4', config_tunnel)
+render('./public/animations/double.mp4', config_double)
+render('./public/animations/barrier.mp4', config_barrier)
+render('./public/animations/oscillator.mp4', config_oscillator)
+render('./public/animations/quartic.mp4', config_quartic)
+render('./public/animations/stationary.mp4', config_stationary)
 
 print(f'Finished full render job in {time.time() - start} s')
