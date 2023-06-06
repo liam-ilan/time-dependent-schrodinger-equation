@@ -16,7 +16,7 @@
   <body>
     <div id="container">
       <h1>The Math Behind the Impossible</h1>
-      <h5>Numerically Solving the Time Dependent Schrodinger Equation - Liam Ilan</h5>
+      <h5>Numerically Solving the Time Dependent Schrödinger Equation - Liam Ilan</h5>
 
       <p>
         Some things don’t make sense. Here’s an example:
@@ -74,10 +74,10 @@
         One of the notable consequences of describing elementary particles as waves, is that all particles must exhibit wave phenomena (interference, refraction, etc.). This is the reason light from stars shifts red when they travel farther from us. Photons of light can exhibit the doppler effect, a wave phenomenon.
       </p>
 
-      <h3>The Schrodinger Equation</h3>
+      <h3>The Schrödinger Equation</h3>
 
       <p>
-        But how do we find valid matter waves to animate? Valid solutions to the wave function can be found via the time dependent schrodinger equation,
+        But how do we find valid matter waves to animate? Valid solutions to the wave function can be found via the time dependent Schrödinger equation,
 
         $$i \hbar \frac{\partial}{\partial t} \psi(x, t) = -\frac{\hbar}{2m} \frac{\partial^2}{{\partial x}^2} \psi(x,t) + V(x)\psi(x,t)$$
 
@@ -89,7 +89,7 @@
       </p>
 
       <p>
-        The time dependent Schrodinger equation appears extremely daunting, and if you’re like me, solving it seems impossible. Luckily, we don’t need to solve it. If we set the problem up correctly, we can let a computer do it for us.
+        The time dependent Schrödinger equation appears extremely daunting, and if you’re like me, solving it seems impossible. Luckily, we don’t need to solve it. If we set the problem up correctly, we can let a computer do it for us.
       </p>
 
       <h3>Potential Energy</h3>
@@ -128,7 +128,7 @@
       </p>
 
       <p>
-        In the schrodinger equation, \(V(x)\) is similar to the above example. We are still representing the quantity of potential energy, however this time, instead of having a hill, we might have an insulating layer, stopping current in a circuit. This insulating layer would have a higher potential, as more energy is required to move through it.
+        In the Schrödinger equation, \(V(x)\) is similar to the above example. We are still representing the quantity of potential energy, however this time, instead of having a hill, we might have an insulating layer, stopping current in a circuit. This insulating layer would have a higher potential, as more energy is required to move through it.
       </p>
 
       <p>
@@ -140,10 +140,10 @@
         <div class="subtitle">An electron bounces off of a potential barrier (in red), as it does not have enough energy to get across.</div>
       </p>
 
-      <h2>Approximating the Schrodinger Equation</h2>
+      <h2>Approximating the Schrödinger Equation</h2>
 
       <p>
-        Now that we have all of our terms set up, let’s go back to the Schrodinger Equation,
+        Now that we have all of our terms set up, let’s go back to the Schrödinger Equation,
 
         $$i \hbar \frac{\partial}{\partial t} \psi(x, t) = -\frac{\hbar}{2m} \frac{\partial^2}{{\partial x}^2} \psi(x,t) + V(x)\psi(x,t)$$
 
@@ -167,7 +167,7 @@
       </p>
 
       <p>
-        We can use this to find the first time derivative of the wave function, present on the left side of the schrodinger equation,
+        We can use this to find the first time derivative of the wave function, present on the left side of the Schrödinger equation,
 
         $$\frac{\partial}{\partial t} \psi(x, t) = \lim_{\Delta t \to 0} \frac{\psi(x, t + \Delta t) - \psi(x, t)}{\Delta t}$$
       </p>
@@ -217,7 +217,7 @@
       </p>
 
       <p>
-        We can now rewrite the schrodinger equation with our substitutes for the derivative.
+        We can now rewrite the Schrödinger equation with our substitutes for the derivative.
 
         $$
         i \hbar \frac{\psi(x, t + \Delta t) - \psi(x, t)}{\Delta t} = -\frac{\hbar}{2m} \left( \frac{\psi(x + \Delta x, t) - 2 \psi(x, t) + \psi(x - \Delta x, t)}{{\Delta x}^2} \right) + V(x)\psi(x,t)
