@@ -228,7 +228,11 @@
         We can now rearange this formula, such that \(\psi(x, t + \Delta t)\) is isolated,
 
         $$
-        \psi(x, t + \Delta t) = \left(\frac{1}{2m} \right) \left(\frac{\Delta t}{{\Delta x}^2} \right) \left( \psi(x + \Delta x, t) - 2 \psi(x, t) + \psi(x - \Delta x, t) \right) - \left(\frac{i}{\hbar}\right)(\Delta t)V(x)\psi(x,t) + \psi(x,t)
+        \begin{aligned}
+        \psi(x, t + \Delta t) &= \left(\frac{1}{2m} \right) \left(\frac{\Delta t}{{\Delta x}^2} \right) \left( \psi(x + \Delta x, t) - 2 \psi(x, t) + \psi(x - \Delta x, t) \right) \\
+        &- \left(\frac{i}{\hbar}\right)(\Delta t)V(x)\psi(x,t) \\
+        &+ \psi(x,t)
+        \end{aligned}
         $$
       </p>
 
@@ -282,7 +286,11 @@
         One limitation of real computers is that numbers and operations are not always exact. As we recursively apply our algorithm,
 
         $$
-        \psi(x, t + \Delta t) = \left(\frac{1}{2m} \right) \left(\frac{\Delta t}{{\Delta x}^2} \right) \left( \psi(x + \Delta x, t) - 2 \psi(x, t) + \psi(x - \Delta x, t) \right) - \left(\frac{i}{\hbar}\right)(\Delta t)V(x)\psi(x,t) + \psi(x,t)
+        \begin{aligned}
+        \psi(x, t + \Delta t) &= \left(\frac{1}{2m} \right) \left(\frac{\Delta t}{{\Delta x}^2} \right) \left( \psi(x + \Delta x, t) - 2 \psi(x, t) + \psi(x - \Delta x, t) \right) \\
+        &- \left(\frac{i}{\hbar}\right)(\Delta t)V(x)\psi(x,t) \\
+        &+ \psi(x,t)
+        \end{aligned}
         $$
 
         numerical instability will arise. As we run the simulation, the condition we layed out at the very start of this article,
@@ -331,7 +339,11 @@
         Let’s take an example, say that we set our left most boundary (the negative direction) to \(0\), and then try to evaluate \(\psi(0, t + \Delta t)\),
 
         $$
-        \psi(0, t + \Delta t) = \left(\frac{1}{2m} \right) \left(\frac{\Delta t}{{\Delta x}^2} \right) \left( \psi(\Delta x, t) - 2 \psi(0, t) + \psi(-\Delta x, t) \right) - \left(\frac{i}{\hbar}\right)(\Delta t)V(0)\psi(0,t) + \psi(0,t)
+        \begin{aligned}
+        \psi(0, t + \Delta t) &= \left(\frac{1}{2m} \right) \left(\frac{\Delta t}{{\Delta x}^2} \right) \left( \psi(\Delta x, t) - 2 \psi(0, t) + \psi(-\Delta x, t) \right) \\ 
+        &- \left(\frac{i}{\hbar}\right)(\Delta t)V(0)\psi(0,t) \\
+        &+ \psi(0,t)
+        \end{aligned}
         $$
 
         In order to find \(\psi(0, t + \Delta t)\), we need to know \(\psi(-\Delta x, t)\), however \(-\Delta x\) is outside the bounds (\(-\Delta x\ \lt 0\)). How do we handle this?
@@ -351,26 +363,32 @@
 
       <p class="image">
         <video src="animations/barrier/video.mp4" poster="animations/barrier/thumbnail.png" controls></video>
+        <div class="subtitle">A high energy potential barrier reflects an electron completely.</div>
       </p>
 
       <p class="image">
         <video src="animations/double/video.mp4" poster="animations/double/thumbnail.png" controls></video>
+        <div class="subtitle">An electron tunnels through two barriers.</div>
       </p>
 
       <p class="image">
         <video src="animations/free/video.mp4" poster="animations/free/thumbnail.png" controls></video>
+        <div class="subtitle">A free electron.</div>
       </p>
 
       <p class="image">
         <video src="animations/oscillator/video.mp4" poster="animations/oscillator/thumbnail.png" controls></video>
+        <div class="subtitle">An electron in a quadratic potential oscillates with simple harmonic motion.</div>
       </p>
 
       <p class="image">
         <video src="animations/quartic/video.mp4" poster="animations/quartic/thumbnail.png" controls></video>
+        <div class="subtitle">An electron interacts with a quartic potential.</div>
       </p>
 
       <p class="image">
         <video src="animations/stationary/video.mp4" poster="animations/stationary/thumbnail.png" controls></video>
+        <div class="subtitle">An electron with no momentum.</div>
       </p>
 
       <h2>Wrapping it Up</h2>
@@ -387,6 +405,7 @@
 
       <p class="image">
         <video src="animations/tunnel/video.mp4" poster="animations/tunnel/thumbnail.png" controls></video>
+        <div class="subtitle">Quantum tunneling.</div>
       </p>
 
       <p>
@@ -395,7 +414,7 @@
 
       <p class="image">
         <img src="./assets/balls-no-pass.svg"></img>
-        <div class="subtitle">The potential energy of the hill is too high for the ball to pass</div>
+        <div class="subtitle">The potential energy of the hill is too high for the ball to pass.</div>
       </p>
 
       <p>
