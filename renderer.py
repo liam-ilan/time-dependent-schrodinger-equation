@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import scipy.constants as constants
 
-def render(path, config):
+def render(path, thumb_path, config):
   # time
   start = time.time()
 
@@ -180,6 +180,9 @@ def render(path, config):
   $\sigma={round(std_dev/10**get_sci(std_dev),2):0<4} \times 10^{{{get_sci(std_dev)}}} m$
   $m={round(m/10**get_sci(m), 2):0<4} \times 10^{{{get_sci(m)}}} kg$''')
 
+  print('Saving Initial Conditions')
+  plt.savefig(thumb_path)
+  
   # animate
   print('Creating Animation')
   anim = animation.FuncAnimation(plt.gcf(),

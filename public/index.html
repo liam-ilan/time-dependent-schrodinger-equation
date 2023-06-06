@@ -36,14 +36,14 @@
       </p>
 
       <p class="image">
-        <video src="animations/quartic.mp4" controls></video>
+        <video src="animations/quartic/video.mp4" poster="animations/quartic/thumbnail.png" controls></video>
         <div class="subtitle">A gaussian wavepacket interacting with a quartic potential.</div>
       </p>
 
       <h2>The Wave Function</h2>
 
       <p>
-        Let’s start with the statement above, <span class="emphasis">Light is both a particle and a wave</span>. What do we mean by this?
+        Let’s start with the statement above, <span class="emphasis">light is both a particle and a wave</span>. What do we mean by this?
       </p>
 
       <p>
@@ -59,7 +59,7 @@
 
       <p class="image">
         <img src="./assets/snapshot-stationary.png"></img>
-        <div class="subtitle">A graph of a certain matter wave. The blue line is the probability distribution. The green and yellow lines are the real and imaginary componenets of the wave.</div>
+        <div class="subtitle">A graph of a certain matter wave. The blue line is the probability distribution. The green and yellow lines are the real and imaginary components of the wave.</div>
       </p>
 
       <p>
@@ -136,7 +136,7 @@
       </p>
 
       <p class="image">
-        <video src="animations/barrier.mp4" controls></video>
+        <video src="animations/barrier/video.mp4" poster="animations/barrier/thumbnail.png" controls></video>
         <div class="subtitle">An electron bounces off of a potential barrier (in red), as it does not have enough energy to get across.</div>
       </p>
 
@@ -239,7 +239,7 @@
       <h3>Initial Value</h3>
 
       <p>
-        But what about that initial value? The algorithim we built let's us calculate states of \psi in terms of it's past states, but at \(t=0\), there is no past state of \psi. We need some some set of initial conditions that represents the information we have on the particle at \(t=0\).
+        But what about that initial value? The algorithim we built let's us calculate states of \(\psi\) in terms of it's past states, but at \(t=0\), there is no past state of \(\psi\). We need some some set of initial conditions that represents the information we have on the particle at \(t=0\).
       </p>
       
       <p>
@@ -261,12 +261,12 @@
       </p>
 
       <p class="image">
-        <video src="animations/stationary.mp4" controls></video>
+        <video src="animations/stationary/video.mp4" poster="animations/stationary/thumbnail.png" controls></video>
         <div class="subtitle">Animation where \(k = 0\)</div>
       </p>
 
       <p class="image">
-        <video src="animations/free.mp4" controls></video>
+        <video src="animations/free/video.mp4" poster="animations/free/thumbnail.png" controls></video>
         <div class="subtitle">Animation where \(k > 0\)</div>
       </p>
 
@@ -344,36 +344,36 @@
       <h2>Some Cool Results</h2>
 
       <p>
-        I implemented the algorithm in Python with Matplotlib <a href="https://github.com/liam-ilan/time-dependent-schrodinger-equation">here</a>. For the programmers out there, instructions are in <code>README.md</code>, for how to play around with the code and generate your own animations.
+        I implemented the algorithm in Python with Matplotlib <a href="https://github.com/liam-ilan/time-dependent-schrodinger-equation">here</a>. For the programmers out there, instructions for how to play around with the code and generate your own animations are in <code>README.md</code>.
         
         Here are some interesting animations I created with the software I built,
       </p>
 
       <p class="image">
-        <video src="animations/barrier.mp4" controls></video>
+        <video src="animations/barrier/video.mp4" poster="animations/barrier/thumbnail.png" controls></video>
       </p>
 
       <p class="image">
-        <video src="animations/double.mp4" controls></video>
+        <video src="animations/double/video.mp4" poster="animations/double/thumbnail.png" controls></video>
       </p>
 
       <p class="image">
-        <video src="animations/free.mp4" controls></video>
+        <video src="animations/free/video.mp4" poster="animations/free/thumbnail.png" controls></video>
       </p>
 
       <p class="image">
-        <video src="animations/oscillator.mp4" controls></video>
+        <video src="animations/oscillator/video.mp4" poster="animations/oscillator/thumbnail.png" controls></video>
       </p>
 
       <p class="image">
-        <video src="animations/quartic.mp4" controls></video>
+        <video src="animations/quartic/video.mp4" poster="animations/quartic/thumbnail.png" controls></video>
       </p>
 
       <p class="image">
-        <video src="animations/stationary.mp4" controls></video>
+        <video src="animations/stationary/video.mp4" poster="animations/stationary/thumbnail.png" controls></video>
       </p>
 
-      <h3>Quantum Tunneling</h3>
+      <h2>Wrapping it Up</h2>
 
       <p class="note">
         To understand everything I'm about to tell you, You need to do something first. You need to believe in the impossible. Can you do that? Good. 
@@ -386,7 +386,7 @@
       </p>
 
       <p class="image">
-        <video src="animations/tunnel.mp4" controls></video>
+        <video src="animations/tunnel/video.mp4" poster="animations/tunnel/thumbnail.png" controls></video>
       </p>
 
       <p>
@@ -406,8 +406,22 @@
         <img src="./assets/flash.gif"></img>
       </p>
 
-      <h2>Conclusion</h2>
+      <h2>References</h2>
 
+      <p>
+        <div class="citation-item">
+          Cantor's Paradise (2023, February 3). The Origins of the Schrödinger Equation. Medium. Retrieved June 6, 2023, from <a href="https://www.cantorsparadise.com/the-origins-of-the-schr%C3%B6dinger-equation-47bdfddced17">https://www.cantorsparadise.com/the-origins-of-the-schr%C3%B6dinger-equation-47bdfddced17</a>
+        </div>
+        <div class="citation-item">
+          Finite difference method. (2023, February 11). In Wikipedia. <a href="https://en.wikipedia.org/wiki/Finite_difference_method">https://en.wikipedia.org/wiki/Finite_difference_method</a>
+        </div>
+        <div class="citation-item">
+          [Mr. P Solver]. (2023, June 21). Time-Dependent Schrodinger Equation in Python: Two Different Techniques [Video]. Youtube. <a href="https://youtu.be/kVjg3jbM3Pw">https://youtu.be/kVjg3jbM3Pw</a>
+        </div>
+        <div class="citation-item">
+          Rectangular potential barrier. (2023, February 27). In Wikipedia. <a href="https://en.wikipedia.org/wiki/Rectangular_potential_barrier">https://en.wikipedia.org/wiki/Rectangular_potential_barrier</a>
+        </div>
+      </p>
       <p id="copyright">
         Copyright © 2023 <a href="https://www.liamilan.com/">Liam Ilan</a>
       </p>

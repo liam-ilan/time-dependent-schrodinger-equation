@@ -69,12 +69,12 @@ config_stationary = config_free.copy()
 config_stationary['x_0'] = 0
 config_stationary['k'] = 0
 
-render('./public/animations/free.mp4', config_free)
-render('./public/animations/tunnel.mp4', config_tunnel)
-render('./public/animations/double.mp4', config_double)
-render('./public/animations/barrier.mp4', config_barrier)
-render('./public/animations/oscillator.mp4', config_oscillator)
-render('./public/animations/quartic.mp4', config_quartic)
-render('./public/animations/stationary.mp4', config_stationary)
+render('./public/animations/free/video.mp4', './public/animations/free/thumbnail.png', config_free)
+render('./public/animations/tunnel/video.mp4', './public/animations/tunnel/thumbnail.png', config_tunnel)
+render('./public/animations/double/video.mp4', './public/animations/double/thumbnail.png', config_double)
+render('./public/animations/barrier/video.mp4', './public/animations/barrier/thumbnail.png', config_barrier)
+render('./public/animations/oscillator/video.mp4', './public/animations/oscillator/thumbnail.png', config_oscillator)
+render('./public/animations/quartic/video.mp4', './public/animations/quartic/thumbnail.png', config_quartic)
+render('./public/animations/stationary/video.mp4', './public/animations/stationary/thumbnail.png', config_stationary)
 
 print(f'Finished full render job in {time.time() - start} s')

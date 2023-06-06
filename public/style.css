@@ -17,6 +17,8 @@ h5 {
 
 h2 {
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 0px;
 }
 
 h1 {
@@ -24,6 +26,17 @@ h1 {
   text-align: center;
 }
 
+a {
+  color: black;
+}
+
+code {
+  font-size: 1em;
+  font-family: "Monaco", monospace;
+  background-color: #ddd;
+  padding: 3px;
+  border-radius: 2px;
+}
 mjx-container {
   overflow-x: auto;
   overflow-y: hidden;
@@ -48,6 +61,7 @@ mjx-container > * {
 .subtitle {
  text-align: center;
  font-size: small;
+ font-style: italic;
  margin-bottom: 50px;
 }
 
@@ -56,6 +70,12 @@ mjx-container > * {
   padding: 10px;
   margin: 20px;
   color: #666;
+}
+
+.citation-item {
+  margin-left: 2em; 
+  text-indent: -2em;
+  overflow-wrap: break-word;
 }
 
 #container {
