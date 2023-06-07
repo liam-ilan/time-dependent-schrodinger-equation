@@ -35,12 +35,12 @@
       </p>
 
       <p>
-        This articles goal is to show you the process, the math, and the physics behind making animations like,
+        This article's goal is to show you the process, the math, and the physics behind making animations like,
       </p>
 
       <p class="image">
         <video src="animations/quartic/video.mp4" poster="animations/quartic/thumbnail.png" controls></video>
-        <div class="subtitle">A gaussian wavepacket interacting with a quartic potential.</div>
+        <div class="subtitle">A gaussian wave packet interacting with a quartic potential.</div>
       </p>
 
       <h2>The Wave Function</h2>
@@ -57,12 +57,12 @@
 
       <p class="image">
         <img src="./assets/orbital.png"></img>
-        <div class="subtitle">The Probability Distribution of a 4f Electron. The electron does not exist at any single position, until it is observed. When it is observed, it collapses into one position.</div>
+        <div class="subtitle">The Probability Distribution of a 4f Electron. The electron does not exist at any single position, until it is observed. When it is observed, it collapses into one position. This graph was generated as part of a seperate project by the author, and can be found <a href="https://liam-ilan.github.io/electron-orbitals/">here</a>.</div>
       </p>
 
       <p class="image">
         <img src="./assets/snapshot-stationary.png"></img>
-        <div class="subtitle">A graph of a certain matter wave. The blue line is the probability distribution. The green and yellow lines are the real and imaginary components of the wave.</div>
+        <div class="subtitle">A snapshot of an arbitrary matter wave. The blue line is the probability distribution. The green and yellow lines are the real and imaginary components of the wave.</div>
       </p>
 
       <p>
@@ -74,7 +74,7 @@
       </p>
 
       <p>
-        One of the notable consequences of describing elementary particles as waves, is that all particles must exhibit wave phenomena (interference, refraction, etc.). This is the reason light from stars shifts red when they travel farther from us. Photons of light can exhibit the doppler effect, a wave phenomenon.
+        One of the notable consequences of describing elementary particles as waves, is that all particles must exhibit wave phenomena (interference, refraction, etc.). This is the reason light from stars shifts red when they travel away from us. Photons of light can exhibit the doppler effect, a wave phenomenon.
       </p>
 
       <h3>The Schrödinger Equation</h3>
@@ -88,7 +88,7 @@
       </p>
 
       <p class="note">
-        P.S. Deriving this equation is not within the scope of this article, however, an excellent article on this topic can be found <a href="https://www.cantorsparadise.com/the-origins-of-the-schr%C3%B6dinger-equation-47bdfddced17">here</a>.
+        P.S. Deriving this equation is not within the scope of this article, however, an excellent resource on the topic can be found <a href="https://www.cantorsparadise.com/the-origins-of-the-schr%C3%B6dinger-equation-47bdfddced17">here</a>.
       </p>
 
       <p>
@@ -127,7 +127,7 @@
       </p>
 
       <p>
-        Notice how in a sense, \(V(x)\) represents how much energy is needed to get from a point of \(0\) potential, to a point \(x\). A point with a higher potential requires more energy to get to.
+        Notice how \(V(x)\) represents how much energy is needed to get from a point of \(0\) potential, to a point \(x\). A point with a higher potential requires more energy to get to.
       </p>
 
       <p>
@@ -175,33 +175,33 @@
         $$\frac{\partial}{\partial t} \psi(x, t) = \lim_{\Delta t \to 0} \frac{\psi(x, t + \Delta t) - \psi(x, t)}{\Delta t}$$
       </p>
       <p>
-        That wasn’t too bad, but what about the second spacial derivative of displacement? Well, let’s start with the first derivative with respect to displacement, in fact let’s repeat the same process we did for the time derivative,
+        That wasn’t too bad, but what about the second spatial derivative of displacement? Well, let’s start with the first derivative with respect to displacement, in fact let’s repeat the same process we did for the time derivative,
 
         $$\frac{\partial}{\partial x} \psi(x, t) = \lim_{\Delta x \to 0} \frac{\psi(x + \Delta x, t) - \psi(x, t)}{\Delta x}$$
       </p>
 
       <p>
-        Uh oh... we have a small problem here. We want our simulation to act the same in all directions. When \(\Delta x\) is infinitesimally small, that isn’t an issue, however because \(\Delta x\) is finite, we need to redefine the derivative slightly...
+        Uh oh... we have a small problem here. We want our simulation to act the same in all directions (to be spatially symmetric). When \(\Delta x\) is infinitesimally small, that isn’t an issue, however because \(\Delta x\) is finite, we need to redefine the derivative slightly...
 
         $$\frac{d}{dx} f(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x - \Delta x)}{2 \Delta x}$$
 
-        You will find that this definition is, for infinitesimally small steps, identical to our first definition, however for finite steps, this definition is spatially symetric.
+        You will find that this definition is, for infinitesimally small steps, identical to our first definition (minus a few edge cases), however for finite steps, this definition is spatially symmetric.
       </p>
 
       <p class="image">
         <img src="./assets/diff-1.png"></img>
-        <div class="subtitle">The asymteric derivative illustrated</div>
+        <div class="subtitle">The asymmetric derivative illustrated</div>
       </p>
 
       <p class="image">
         <img src="./assets/diff-2.png"></img>
-        <div class="subtitle">The symteric derivative illustrated</div>
+        <div class="subtitle">The symmteric derivative illustrated</div>
       </p>
 
       <p> 
-        From here, we can find the first spatial derivative of \(\psi(x,t)\), 
+        Now, we can find the first spatial derivative of \(\psi(x,t)\), 
 
-        $$D(x, t) = \frac{\partial}{\partial x} \psi(x, t) = \lim_{\Delta x \to 0} \frac{\psi(x + \Delta x, t) - \psi(x - \Delta x, t)}{2 \Delta x}$$
+        $$\text{let } D(x, t) = \frac{\partial}{\partial x} \psi(x, t) = \lim_{\Delta x \to 0} \frac{\psi(x + \Delta x, t) - \psi(x - \Delta x, t)}{2 \Delta x}$$
 
         And the second derivative,
 
@@ -228,7 +228,7 @@
       </p>
 
       <p>
-        We can now rearange this formula, such that \(\psi(x, t + \Delta t)\) is isolated,
+        And then rearrange this formula, such that \(\psi(x, t + \Delta t)\) is isolated,
 
         $$
         \begin{aligned}
@@ -246,7 +246,7 @@
       <h3>Initial Value</h3>
 
       <p>
-        But what about that initial value? The algorithim we built let's us calculate states of \(\psi\) in terms of it's past states, but at \(t=0\), there is no past state of \(\psi\). We need some some set of initial conditions that represents the information we have on the particle at \(t=0\).
+        But what about that initial value? The algorithm we built let's us calculate states of \(\psi\) in terms of it's past states, but at \(t=0\), there is no past state of \(\psi\). We need some some set of initial conditions that represents the information we have on the particle at \(t=0\).
       </p>
       
       <p>
@@ -258,11 +258,11 @@
       </p>
 
       <p>
-        The wave number (\(k\)) is important for a couple reasons reason. 1st, it is linearly correlated to the momentum of the particle,
-        $$p = hk$$
+        The wave number (\(k\)) is important for a couple of reasons. First, it is linearly correlated to the momentum of the particle,
+        $$p = \hbar k$$
 
-        2nd, it is related to the wavelength of the particle,
-        $$k = \frac{2 \pi}{\hbar}$$
+        Second, it is related to the wavelength of the particle,
+        $$k = \frac{2 \pi}{\lambda}$$
 
         A negative \(k\) will result in momentum in the negative direction, and a positive \(k\) will result in momentum in a positive direction.
       </p>
@@ -286,26 +286,16 @@
       <h3>Normalization</h3>
 
       <p>
-        One limitation of real computers is that numbers and operations are not always exact. As we recursively apply our algorithm,
-
-        $$
-        \begin{aligned}
-        \psi(x, t + \Delta t) &= \left(\frac{1}{2m} \right) \left(\frac{\Delta t}{{\Delta x}^2} \right) \left( \psi(x + \Delta x, t) - 2 \psi(x, t) + \psi(x - \Delta x, t) \right) \\
-        &- \left(\frac{i}{\hbar}\right)(\Delta t)V(x)\psi(x,t) \\
-        &+ \psi(x,t)
-        \end{aligned}
-        $$
-
-        numerical instability will arise. As we run the simulation, the condition we layed out at the very start of this article,
+        One limitation of real computers is that numbers and operations are not always exact. As we recursively apply our algorithm, numerical instability will arise, thus the condition we laid out at the very start of this article,
         $$\int_{-\infty}^{\infty} |\psi(x, t)|^2 \,\partial{x} = 1$$
 
-        may no longer be true.
+        may no longer hold true.
       </p>
 
       <p>
-        In order to correct for this, after each application of our algorithim, we normalize \(\psi\). This process is as follows,
+        In order to correct for this, after each application of our algorithm, we normalize \(\psi\). The process is as follows,
 
-        $$ \text{let } \psi_0 = \text{the resulting wave function after an itteration of our algorithim} $$
+        $$ \text{let } \psi_0 = \text{the resulting wave function after an iteration of our algorithm} $$
         $$ \text{let } I = \int_{-\infty}^{\infty} |\psi_0(x, t)|^2 \,\partial{x} $$
 
         We can rearrange this,
@@ -339,7 +329,7 @@
       </p>
 
       <p>
-        Let’s take an example, say that we set our left most boundary (the negative direction) to \(0\), and then try to evaluate \(\psi(0, t + \Delta t)\),
+        Let’s take an example, set our left most boundary (the negative direction) to \(0\), and then try to evaluate \(\psi(0, t + \Delta t)\),
 
         $$
         \begin{aligned}
@@ -349,7 +339,7 @@
         \end{aligned}
         $$
 
-        In order to find \(\psi(0, t + \Delta t)\), we need to know \(\psi(-\Delta x, t)\), however \(-\Delta x\) is outside the bounds (\(-\Delta x\ \lt 0\)). How do we handle this?
+        In order to find \(\psi(0, t + \Delta t)\), we need to know \(\psi(-\Delta x, t)\), however, since \(-\Delta x\ \lt 0\), \(-\Delta x\) is outside the bounds of the wave function. How do we handle this?
       </p>
 
       <p>
@@ -442,6 +432,12 @@
         </div>
         <div class="citation-item">
           Rectangular potential barrier. (2023, February 27). In Wikipedia. <a href="https://en.wikipedia.org/wiki/Rectangular_potential_barrier">https://en.wikipedia.org/wiki/Rectangular_potential_barrier</a>
+        </div>
+        <div class="citation-item">
+          Schwartz, M. Lecture 11: Wavepackets and dispersion [PDF]. Harvard. <a href="https://scholar.harvard.edu/files/schwartz/files/lecture11-wavepackets.pdf">https://scholar.harvard.edu/files/schwartz/files/lecture11-wavepackets.pdf</a>
+        </div>
+        <div class="citation-item">
+          Symmetric derivative. (2023, March 25). In Wikipedia. <a href="https://en.wikipedia.org/wiki/Symmetric_derivative">https://en.wikipedia.org/wiki/Symmetric_derivative</a>
         </div>
       </p>
 
