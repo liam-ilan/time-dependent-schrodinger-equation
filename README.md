@@ -1,5 +1,5 @@
-# The Math Behind the Impossible
-Software for generating animations of the time dependent schrödinger equation using the finite difference method in python, as seen in [The Math Behind the Impossible](https://liam-ilan.github.io/time-dependent-schrodinger-equation/).
+# Visualizing the Impossible
+Software for generating animations of the time dependent schrödinger equation using the finite difference method in python, as seen in [Visualizing the Impossible](https://liam-ilan.github.io/time-dependent-schrodinger-equation/).
 
 ![](./readme-demo.gif)
 
@@ -18,7 +18,7 @@ $$
 \end{aligned}
 $$
 
-Derivation of this expression can be found in this repo's accompanying article, [The Math Behind the Impossible](https://liam-ilan.github.io/time-dependent-schrodinger-equation/).
+Derivation of this expression can be found in this repo's accompanying article, [Visualizing the Impossible](https://liam-ilan.github.io/time-dependent-schrodinger-equation/).
 
 This repo and the accompanying article were create for the Summer of Math Exposition 3 (SoME3), read more about the competition at: [https://some.3b1b.co/](https://some.3b1b.co/).
 

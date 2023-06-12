@@ -9,22 +9,35 @@ img, video {
   width: 100%
 }
 
+hr {
+  margin-top: 20px;
+}
+
 h5 {
   font-weight: normal;
-  margin-top: 0;
+  margin: 0;
   text-align: center;
+  font-size: 1.2em;
   font-style: italic;
+}
+
+h6 {
+  font-weight: normal;
+  text-align: center;
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+  margin-top: 0;
 }
 
 h2 {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 60px;
   margin-bottom: 0px;
 }
 
 h1 {
-  margin-bottom: 5px;
   text-align: center;
+  margin: 0;
 }
 
 a {

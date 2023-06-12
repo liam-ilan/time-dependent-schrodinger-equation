@@ -2,24 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>The Math Behind the Impossible</title>
+    <title>Visualizing the Impossible</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="author" content="Liam Ilan">
     <meta
       name="description"
-      content="The Math Behind the Impossible - Numerically Solving the Time Dependent Schrödinger Equation"
+      content="Visualizing the Impossible - Numerically Approximating the Time Dependent Schrödinger Equation for Computer Visualization"
     />
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
   <body>
     <div id="container">
-      <h1>The Math Behind the Impossible</h1>
+      <h1>Visualizing the Impossible</h1>
       <h5>
-        Numerically Solving the Time Dependent Schrödinger Equation - Liam Ilan </br>
-        Accompanying Software can be Found <a href="https://github.com/liam-ilan/time-dependent-schrodinger-equation">Here</a>
+        Numerically Approximating the Time Dependent Schrödinger Equation for Computer Visualization
       </h5>
+      <h6>By Liam Ilan</h6>
+      <hr />
 
       <p>
         Some things don’t make sense. Here’s an example:
@@ -27,20 +28,16 @@
       </p>
 
       <p>
-        When my grade 8 science teacher said that, it just didn’t sit right. It seemed as absurd as saying that a dog can be red and blue at the same time, or that it can be both rainy and sunny at the same time, or that a cat can be both alive and dead at the same time, or that...
+        When I first heard this, it just didn’t sit right. It seemed as absurd as saying that something can be both blue and brown, or that a ball can tunnel through a wall, or that <a href="https://en.wikipedia.org/wiki/Schr%C3%B6dinger%27s_cat">a cat can be both alive and dead at the same time</a>.
       </p>
 
       <p>
-        Anyways, I’m graduating highschool in around a week, and figured it’s about time to make sense of this conundrum, but I don’t want to just understand the math. I want to be able to visualize the phenomena. Furthermore, I want to build these visualizations myself.
+        This article's goal is to make sense of this conundrum. In the proccess, we will learn how to use the finite difference method to numerically approximate the time dependent Schrödinger equation. Such approximations are used to make animations like:
       </p>
-
-      <p>
-        This article's goal is to show you the process, the math, and the physics behind making animations like,
-      </p>
-
+    
       <p class="image">
         <video src="animations/quartic/video.mp4" poster="animations/quartic/thumbnail.png" controls></video>
-        <div class="subtitle">A gaussian wave packet interacting with a quartic potential.</div>
+        <div class="subtitle">A gaussian wave packet interacting with a quartic potential. The green and yellow dotted lines represent the real and imaginary components of the wave function respectively. The blue line represents the probability distribution of the wave function. The red line represents the potential. We will learn what all of these terms mean throughout the article.</div>
       </p>
 
       <h2>The Wave Function</h2>
@@ -50,19 +47,23 @@
       </p>
 
       <p>
-        In quantum mechanics, photons, electrons, and in fact all elementary particles, can be described by complex valued matter waves, found through the wave function, \(\psi(x, t)\). The magnitude of this wave function is related to how likely we are to observe a particle at any given position. More specifically, the probability distribution function describing the position of the particle is,
+        Photons, electrons, and in fact all elementary particles, are like disturbances in a pond. They exhibit wave phenomena (relection, diffraction, interference, doppler effect, etc.). This "pond", that an elementary particle exists in, is called a quantum field, and it exists all around us.
+      </p>
+
+      <p>
+        These disturbances in the field, also known as matter waves, are described by the complex valued wave function, \(\psi(x, t)\). The magnitude of this wave function is related to how likely we are to observe a particle at any given position. More specifically, the probability distribution function describing the position of the particle is,
 
         $$|\psi(x, t)|^2$$
       </p>
 
       <p class="image">
         <img src="./assets/orbital.png"></img>
-        <div class="subtitle">The Probability Distribution of a 4f Electron. The electron does not exist at any single position, until it is observed. When it is observed, it collapses into one position. This graph was generated as part of a seperate project by the author, and can be found <a href="https://liam-ilan.github.io/electron-orbitals/">here</a>.</div>
+        <div class="subtitle">The Probability Distribution of a 4f Electron. The electron does not exist at any single position, until it is observed. This graph was generated as part of a seperate project by the author, and can be found <a href="https://liam-ilan.github.io/electron-orbitals/">here</a>.</div>
       </p>
 
       <p class="image">
         <img src="./assets/snapshot-stationary.png"></img>
-        <div class="subtitle">A snapshot of an arbitrary matter wave. The blue line is the probability distribution. The green and yellow lines are the real and imaginary components of the wave.</div>
+        <div class="subtitle">A snapshot of an arbitrary matter wave. The blue line is the probability distribution. The green and yellow lines are the real and imaginary components of the wave. The red line represents the potential (here it is 0). This shows how the matter wave itself relates to finding the particle at any given position.</div>
       </p>
 
       <p>
@@ -71,10 +72,6 @@
         $$\int_{-\infty}^{\infty} |\psi(x, t)|^2 \,\partial{x} = 1$$
 
         We will use this property later on to increase the accuracy of our animations.
-      </p>
-
-      <p>
-        One of the notable consequences of describing elementary particles as waves, is that all particles must exhibit wave phenomena (interference, refraction, etc.). This is the reason light from stars shifts red when they travel away from us. Photons of light can exhibit the doppler effect, a wave phenomenon.
       </p>
 
       <h3>The Schrödinger Equation</h3>
@@ -88,7 +85,7 @@
       </p>
 
       <p class="note">
-        P.S. Deriving this equation is not within the scope of this article, however, an excellent resource on the topic can be found <a href="https://www.cantorsparadise.com/the-origins-of-the-schr%C3%B6dinger-equation-47bdfddced17">here</a>.
+        Deriving this equation is not within the scope of this article, however, an excellent resource on the topic can be found <a href="https://www.cantorsparadise.com/the-origins-of-the-schr%C3%B6dinger-equation-47bdfddced17">here</a>.
       </p>
 
       <p>
@@ -98,7 +95,7 @@
       <h3>Potential Energy</h3>
 
       <p>
-        Before we begin, we have one last term to define, \(V(x)\). I said earlier that \(V(x)\) is the potential energy at a given point, but what does that mean?
+        Before we try to solve the Schrödinger equation, we have one last term to define, \(V(x)\). We said earlier that \(V(x)\) is the potential energy at a given point, but what does that mean?
       </p>
 
       <p>
@@ -135,7 +132,7 @@
       </p>
 
       <p>
-        One of the important things to note is that this potential energy is not the same as voltage. Voltage measures a quantity of energy per charge. Here, we measure a quantity of energy, period.
+        One of the important things to note is that the term \(V(x)\) is potential energy, not voltage. Voltage measures a quantity of energy per charge. Here, we measure a quantity of energy, period.
       </p>
 
       <p class="image">
@@ -143,30 +140,38 @@
         <div class="subtitle">An electron bounces off of a potential barrier (in red), as it does not have enough energy to get across.</div>
       </p>
 
+      <p>
+        At the start of the animation, the probability distribution appears normal (blue line). When the particle hits the barrier, various partterns appear in the probability distribution as a result of the reflection wave phenomenon exhibited by the matter wave (in green and yellow).
+      </p>
+
       <h2>Approximating the Schrödinger Equation</h2>
 
       <p>
-        Now that we have all of our terms set up, let’s go back to the Schrödinger Equation,
+        Now that we have defined all our terms, let’s go back to the Schrödinger Equation,
 
         $$i \hbar \frac{\partial}{\partial t} \psi(x, t) = -\frac{\hbar}{2m} \frac{\partial^2}{{\partial x}^2} \psi(x,t) + V(x)\psi(x,t)$$
 
-        This is a second order partial differential equation, and while we could try to find exact analytical solutions, it seems like a lot of work.
+        This is a second order partial differential equation, and while we could try to find exact analytical solutions, it seems like a lot of work... So let’s not do that!
       </p>
 
       <p>
-        So let’s not do that! For our final animations, we don’t really care about exact solutions. <span class="emphasis">It’s good enough, to be close enough.</span>
+        Instead, we can find approximate solutions, that, for the sake of animations, are indistinguisable from the analytical result. <span class="emphasis">It’s good enough, to be close enough.</span>
       </p>
 
       <h3>The Finite Difference Method</h3>
 
       <p>
-        Let’s go back to fundamentals, with the definition of a derivative,
+        The goal of the Finite Difference Method, is to take continuous derivatives, such as those found in the Schrödinger equation, (\(\frac{\partial}{\partial t} \psi(x, t)\) and \(\frac{\partial^2}{{\partial x}^2} \psi(x,t)\)), and transform them into discrete, computable functions.
+      </p>
+
+      <p>
+        To do this, let’s go back to fundamentals, with the definition of a derivative,
 
         $$\frac{d}{dx} f(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}$$
       </p>
 
       <p>
-        In this definition of the derivative, we use infinitesimally small values of x. The problem is that we can’t do that on a computer. What we can do however, is use very very small, finite steps. We call this method, the “Finite Difference Method”.
+        In this definition of the derivative, we use infinitesimally small values of x. The problem is that we can’t do that on a computer. What we can do however, is use very very small, finite steps, to approximate the derivative. This is where the “Finite Difference Method” gets its namesake.
       </p>
 
       <p>
@@ -175,27 +180,28 @@
         $$\frac{\partial}{\partial t} \psi(x, t) = \lim_{\Delta t \to 0} \frac{\psi(x, t + \Delta t) - \psi(x, t)}{\Delta t}$$
       </p>
       <p>
-        That wasn’t too bad, but what about the second spatial derivative of displacement? Well, let’s start with the first derivative with respect to displacement, in fact let’s repeat the same process we did for the time derivative,
+        Now, let's take the second spatial derivative present on the right hand side of the Schrödinger equation. The first step, is to find the first spatial derivative. Let’s repeat the same process we did for the time derivative,
 
         $$\frac{\partial}{\partial x} \psi(x, t) = \lim_{\Delta x \to 0} \frac{\psi(x + \Delta x, t) - \psi(x, t)}{\Delta x}$$
       </p>
 
       <p>
-        Uh oh... we have a small problem here. We want our simulation to act the same in all directions (to be spatially symmetric). When \(\Delta x\) is infinitesimally small, that isn’t an issue, however because \(\Delta x\) is finite, we need to redefine the derivative slightly...
+        Uh oh... we have a small problem here. In our animation, time only moves one way (forward), so we can say it behaves asymmetrically. In contrast, space in our animation exists in two directions (\(+x\) and \(-x\)). The derivative we have been working with so far has been asymmetric. Before we can move forward, we will need a symmetric definition for the derivative,
 
         $$\frac{d}{dx} f(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x - \Delta x)}{2 \Delta x}$$
 
         You will find that this definition is, for infinitesimally small steps, identical to our first definition (minus a few edge cases), however for finite steps, this definition is spatially symmetric.
+        
       </p>
 
       <p class="image">
         <img src="./assets/diff-1.png"></img>
-        <div class="subtitle">The asymmetric derivative illustrated</div>
+        <div class="subtitle">The asymmetric derivative illustrated. Asymmetric derivatives are biased towards the positive end of the value we want to measure a derivative for.</div>
       </p>
 
       <p class="image">
         <img src="./assets/diff-2.png"></img>
-        <div class="subtitle">The symmteric derivative illustrated</div>
+        <div class="subtitle">The symmteric derivative illustrated. Symmetric derivatives test both in the positive and negative direction, and thus are not biased towards any particular direction.</div>
       </p>
 
       <p> 
@@ -240,7 +246,7 @@
       </p>
 
       <p>
-        This formula let's us predict the value of \(\psi\) in a future timestep, in terms of the current state of \(\psi\). By recursively applying this formula, we can obtain wave functions further than one timestep away.
+        This formula let's us predict the value of \(\psi\) (the wave function) in a future timestep, in terms of the current state of \(\psi\). By recursively applying this formula, we can obtain wave functions further than one timestep away.
       </p>
 
       <h3>Initial Value</h3>
@@ -261,7 +267,7 @@
         The wave number (\(k\)) is important for a couple of reasons. First, it is linearly correlated to the momentum of the particle,
         $$p = \hbar k$$
 
-        Second, it is related to the wavelength of the particle,
+        Second, it is inversely proportional the wavelength of the particle,
         $$k = \frac{2 \pi}{\lambda}$$
 
         A negative \(k\) will result in momentum in the negative direction, and a positive \(k\) will result in momentum in a positive direction.
@@ -269,24 +275,24 @@
 
       <p class="image">
         <video src="animations/stationary/video.mp4" poster="animations/stationary/thumbnail.png" controls></video>
-        <div class="subtitle">Animation where \(k = 0\)</div>
+        <div class="subtitle">An animation where \(k = 0\). Because of this, the wave packet is stationary, and the initial wavelength is \(\infty\) (which can be seen through the lack of periodicity in the initial wave packet). </div>
       </p>
 
       <p class="image">
         <video src="animations/free/video.mp4" poster="animations/free/thumbnail.png" controls></video>
-        <div class="subtitle">Animation where \(k > 0\)</div>
+        <div class="subtitle">Animation where \(k > 0\). Because of this, the wavepacket's wavelength is much shorter than when \(k = 0\). Additionally, the particle has momentum to the right due to a positive \(k\).</div>
       </p>
 
       <h2>Kinks in the System</h2>
 
       <p>
-        Everything we’ve done up until now is great and all, but the real world rarely works this simply. In reality, we are missing two more components to our solution, normalization, and boundary conditions.
+        While theoretically correct, the math above is not enough to approximate the time dependent Schrödinger equation. We are missing two more components to our solution, normalization, and boundary conditions.
       </p>
 
       <h3>Normalization</h3>
 
       <p>
-        One limitation of real computers is that numbers and operations are not always exact. As we recursively apply our algorithm, numerical instability will arise, thus the condition we laid out at the very start of this article,
+        One limitation of real computers is that numbers and operations are not always percise, as computers are constrained with how much memory they can assign to any given number. As we recursively apply our algorithm, numerical instability will arise, thus the condition we laid out at the very start of this article,
         $$\int_{-\infty}^{\infty} |\psi(x, t)|^2 \,\partial{x} = 1$$
 
         may no longer hold true.
@@ -343,15 +349,15 @@
       </p>
 
       <p>
-        Well, it turns out that there are a couple ways, none of which are correct or incorrect. For my simulation, I simply assumed that \(\psi\) at the boundary is \(0\). There are many other valid boundary conditions, including purely reflective, absorptive, and ring boundary conditions. The topic of other boundary conditions is a bit beyond the scope of this article, however is an excellent jumping off point for future work.
+        Well, it turns out that there are a couple ways, none of which are correct or incorrect. For the animations present in this article, it is assumed that \(\psi\) at the boundary is \(0\). There are many other valid boundary conditions, including purely reflective, absorptive, and ring boundary conditions. The topic of other boundary conditions is a bit beyond the scope of this article, however is an excellent jumping off point for future work.
       </p>
 
       <h2>Some Cool Results</h2>
 
       <p>
-        I implemented the algorithm in Python with Matplotlib <a href="https://github.com/liam-ilan/time-dependent-schrodinger-equation">here</a>. For the programmers out there, instructions for how to play around with the code and generate your own animations are in <code>README.md</code>.
+        The algorithm described above is implemented in Python and Matplotlib <a href="https://github.com/liam-ilan/time-dependent-schrodinger-equation">here</a>.
         
-        Here are some interesting animations I created with the software I built,
+        Here are some interesting animations generated with the software,
       </p>
 
       <p class="image">
@@ -384,25 +390,14 @@
         <div class="subtitle">An electron with no momentum.</div>
       </p>
 
-      <h2>Wrapping it Up</h2>
-
-      <p class="note">
-        To understand everything I'm about to tell you, You need to do something first. You need to believe in the impossible. Can you do that? Good. 
-        </br>
-        - Barry Allen, Fastest Man Alive
+      <h2>Finally...</h2>
+      
+      <p>
+        Let's visualize the impossible.
       </p>
 
       <p>
-        By far, the coolest of all of the animations I generated, is this one,
-      </p>
-
-      <p class="image">
-        <video src="animations/tunnel/video.mp4" poster="animations/tunnel/thumbnail.png" controls></video>
-        <div class="subtitle">Quantum tunneling.</div>
-      </p>
-
-      <p>
-        What we observe here, is a particle, of some energy, a barrier of significantly higher potential. In classical  physics, a hill with more potential energy than a particle will always stop the particle from passing.
+        In classical physics, a hill with more potential energy than a particle will always stop the particle from passing.
       </p>
 
       <p class="image">
@@ -411,7 +406,16 @@
       </p>
 
       <p>
-        In quantum physics, this is no longer true. Particles can “tunnel” through barriers with higher potential energy than the particles themselves. We call this phenomenon, quantum tunneling, and it is the closest we will ever get to phasing through walls like the flash.
+        In quantum mechanics however, this is not always the case.
+      </p>
+
+      <p class="image">
+        <video src="animations/tunnel/video.mp4" poster="animations/tunnel/thumbnail.png" controls></video>
+        <div class="subtitle">Quantum tunneling.</div>
+      </p>
+
+      <p>
+        What we observe here, is a particle with some energy, colliding with a barrier of significantly higher potential. Rather than the the particle being completely reflected, the particle has some probability of "tunneling" through the barrier. We call this phenomenon, quantum tunneling, one of the many cases where quantum physics makes the impossible, possible.
       </p>
 
       <h2>References</h2>
@@ -437,15 +441,12 @@
         </div>
       </p>
 
-      <h2>
-        Software
-      </h2>
-
       <p>
-        The software to generate all the animations for this article can be found <a href="https://github.com/liam-ilan/time-dependent-schrodinger-equation">here</a>, and was written by the author of this article, <a href="https://www.liamilan.com/">Liam Ilan</a>. Animations and graphs were made with Matplotlib. Instructions on modifying the software for your own use can be found in <code>README.md</code>. The article itself can be found under <code>/public</code>.
+        The software to generate all the animations for this article can be found <a href="https://github.com/liam-ilan/time-dependent-schrodinger-equation">here</a>.
       </p>
+
       <p id="copyright">
-        Copyright © 2023 <a href="https://www.liamilan.com/">Liam Ilan</a> </br>
+        Copyright © 2023 <a href="https://www.liamilan.com/">Liam Ilan</a> <br />
         Written for <a href="https://some.3b1b.co/">SoME3</a>
       </p>
     </div>
