@@ -51,12 +51,8 @@ code {
   padding: 3px;
   border-radius: 2px;
 }
-mjx-container {
-  overflow-x: auto;
-  overflow-y: hidden;
-}
 
-mjx-container > * {
+.equation {
   overflow-x: auto;
   overflow-y: hidden;
 }

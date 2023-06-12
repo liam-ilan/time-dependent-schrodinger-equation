@@ -53,7 +53,7 @@
       <p>
         These disturbances in the field, also known as matter waves, are described by the complex valued wave function, \(\psi(x, t)\). The magnitude of this wave function is related to how likely we are to observe a particle at any given position. More specifically, the probability distribution function describing the position of the particle is,
 
-        $$|\psi(x, t)|^2$$
+        <div class="equation">$$|\psi(x, t)|^2$$</div>
       </p>
 
       <p class="image">
@@ -69,7 +69,7 @@
       <p>
         It thus makes sense that \(|\psi(x, t)|^2\) should follow the same rules that probability distribution functions do. Specifically, the the sum of all probabilities that the particle is observed at any given point, must be equal to 100%, or
 
-        $$\int_{-\infty}^{\infty} |\psi(x, t)|^2 \,\partial{x} = 1$$
+        <div class="equation">$$\int_{-\infty}^{\infty} |\psi(x, t)|^2 \,\partial{x} = 1$$</div>
 
         We will use this property later on to increase the accuracy of our animations.
       </p>
@@ -79,7 +79,7 @@
       <p>
         But how do we find valid matter waves to animate? Valid solutions to the wave function can be found via the time dependent Schrödinger equation,
 
-        $$i \hbar \frac{\partial}{\partial t} \psi(x, t) = -\frac{\hbar}{2m} \frac{\partial^2}{{\partial x}^2} \psi(x,t) + V(x)\psi(x,t)$$
+        <div class="equation">$$i \hbar \frac{\partial}{\partial t} \psi(x, t) = -\frac{\hbar}{2m} \frac{\partial^2}{{\partial x}^2} \psi(x,t) + V(x)\psi(x,t)$$</div>
 
         where \(\psi(x, t)\) is the wave function, \(\hbar\) is the reduced planck's constant, \(m\) is the mass of the particle, and \(V(x)\) is the potential energy at a given point \(x\).
       </p>
@@ -110,7 +110,7 @@
       <p>
         At any point in space, we can calculate the potential energy of the ball, as a function of horizontal displacement,
 
-        $$V(x) = mgh(x)$$
+        <div class="equation">$$V(x) = mgh(x)$$</div>
       </p>
 
       <p class="image">
@@ -149,7 +149,7 @@
       <p>
         Now that we have defined all our terms, let’s go back to the Schrödinger Equation,
 
-        $$i \hbar \frac{\partial}{\partial t} \psi(x, t) = -\frac{\hbar}{2m} \frac{\partial^2}{{\partial x}^2} \psi(x,t) + V(x)\psi(x,t)$$
+        <div class="equation">$$i \hbar \frac{\partial}{\partial t} \psi(x, t) = -\frac{\hbar}{2m} \frac{\partial^2}{{\partial x}^2} \psi(x,t) + V(x)\psi(x,t)$$</div>
 
         This is a second order partial differential equation, and while we could try to find exact analytical solutions, it seems like a lot of work... So let’s not do that!
       </p>
@@ -167,7 +167,7 @@
       <p>
         To do this, let’s go back to fundamentals, with the definition of a derivative,
 
-        $$\frac{d}{dx} f(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}$$
+        <div class="equation">$$\frac{d}{dx} f(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}$$</div>
       </p>
 
       <p>
@@ -177,18 +177,18 @@
       <p>
         We can use this to find the first time derivative of the wave function, present on the left side of the Schrödinger equation,
 
-        $$\frac{\partial}{\partial t} \psi(x, t) = \lim_{\Delta t \to 0} \frac{\psi(x, t + \Delta t) - \psi(x, t)}{\Delta t}$$
+        <div class="equation">$$\frac{\partial}{\partial t} \psi(x, t) = \lim_{\Delta t \to 0} \frac{\psi(x, t + \Delta t) - \psi(x, t)}{\Delta t}$$</div>
       </p>
       <p>
         Now, let's take the second spatial derivative present on the right hand side of the Schrödinger equation. The first step, is to find the first spatial derivative. Let’s repeat the same process we did for the time derivative,
 
-        $$\frac{\partial}{\partial x} \psi(x, t) = \lim_{\Delta x \to 0} \frac{\psi(x + \Delta x, t) - \psi(x, t)}{\Delta x}$$
+        <div class="equation">$$\frac{\partial}{\partial x} \psi(x, t) = \lim_{\Delta x \to 0} \frac{\psi(x + \Delta x, t) - \psi(x, t)}{\Delta x}$$</div>
       </p>
 
       <p>
         Uh oh... we have a small problem here. In our animation, time only moves one way (forward), so we can say it behaves asymmetrically. In contrast, space in our animation exists in two directions (\(+x\) and \(-x\)). The derivative we have been working with so far has been asymmetric. Before we can move forward, we will need a symmetric definition for the derivative,
 
-        $$\frac{d}{dx} f(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x - \Delta x)}{2 \Delta x}$$
+        <div class="equation">$$\frac{d}{dx} f(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x - \Delta x)}{2 \Delta x}$$</div>
 
         You will find that this definition is, for infinitesimally small steps, identical to our first definition (minus a few edge cases), however for finite steps, this definition is spatially symmetric.
         
@@ -207,18 +207,18 @@
       <p> 
         Now, we can find the first spatial derivative of \(\psi(x,t)\), 
 
-        $$\text{let } D(x, t) = \frac{\partial}{\partial x} \psi(x, t) = \lim_{\Delta x \to 0} \frac{\psi(x + \Delta x, t) - \psi(x - \Delta x, t)}{2 \Delta x}$$
+        <div class="equation">$$\text{let } D(x, t) = \frac{\partial}{\partial x} \psi(x, t) = \lim_{\Delta x \to 0} \frac{\psi(x + \Delta x, t) - \psi(x - \Delta x, t)}{2 \Delta x}$$</div>
 
         And the second derivative,
 
-        $$ \begin{aligned}
+        <div class="equation">$$ \begin{aligned}
         \frac{\partial^2}{{\partial x}^2} \psi(x, t)
         &=\frac{\partial}{\partial x} D(x, t)\\
         &=\lim_{\Delta x \to 0} \frac{D(x + \Delta x, t) - D(x - \Delta x, t)}{2 \Delta x} \\
         &= \lim_{\Delta x \to 0} \frac{\frac{\psi(x + 2\Delta x, t) - \psi(x, t)}{2 \Delta x} - \frac{\psi(x, t) - \psi(x - 2 \Delta x, t)}{2 \Delta x}}{2 \Delta x} \\
         &= \lim_{\Delta x \to 0} \frac{\psi(x + 2 \Delta x, t) - 2 \psi(x, t) + \psi(x - 2 \Delta x, t)}{4 {\Delta x}^2} \\
         &= \lim_{\Delta x \to 0} \frac{\psi(x + \Delta x, t) - 2 \psi(x, t) + \psi(x - \Delta x, t)}{{\Delta x}^2} \\
-        \end{aligned} $$
+        \end{aligned} $$</div>
       </p>
 
       <p>
@@ -228,21 +228,21 @@
       <p>
         We can now rewrite the Schrödinger equation with our substitutes for the derivative.
 
-        $$
+        <div class="equation">$$
         i \hbar \frac{\psi(x, t + \Delta t) - \psi(x, t)}{\Delta t} = -\frac{\hbar}{2m} \left( \frac{\psi(x + \Delta x, t) - 2 \psi(x, t) + \psi(x - \Delta x, t)}{{\Delta x}^2} \right) + V(x)\psi(x,t)
-        $$
+        $$</div>
       </p>
 
       <p>
         And then rearrange this formula, such that \(\psi(x, t + \Delta t)\) is isolated,
 
-        $$
+        <div class="equation">$$
         \begin{aligned}
         \psi(x, t + \Delta t) &= \left(\frac{1}{2m} \right) \left(\frac{\Delta t}{{\Delta x}^2} \right) \left( \psi(x + \Delta x, t) - 2 \psi(x, t) + \psi(x - \Delta x, t) \right) \\
         &- \left(\frac{i}{\hbar}\right)(\Delta t)V(x)\psi(x,t) \\
         &+ \psi(x,t)
         \end{aligned}
-        $$
+        $$</div>
       </p>
 
       <p>
@@ -258,17 +258,17 @@
       <p>
         A commonly used initial value is the Gaussian Wave Packet. The Gaussian Wave Packet has a very important property that makes it a good choice for initial conditions, which is that taking the magnitude of the gaussian wave packet, and squaring it, results in a normal probability distribution, thus, if we were to observe a particle at some position \(x_0\), this distribution would tell us how likely we would be to find the particle again at any point \(x\). Because of this, it reflects the initial information we have on the particle. The formula for the Gaussian Wave Packet is,
 
-        $$\psi(x, 0) = \left(e^{ikx}\right)\left(e^{-\frac{1}{2}\left({\frac{x-x_0}{\sigma}}\right)^2}\right)$$
+        <div class="equation">$$\psi(x, 0) = \left(e^{ikx}\right)\left(e^{-\frac{1}{2}\left({\frac{x-x_0}{\sigma}}\right)^2}\right)$$</div>
 
         where \(\sigma\) is the standard deviation of the wave packet, \(x_0\) is the initial mean, and \(k\) is the wave number.
       </p>
 
       <p>
         The wave number (\(k\)) is important for a couple of reasons. First, it is linearly correlated to the momentum of the particle,
-        $$p = \hbar k$$
+        <div class="equation">$$p = \hbar k$$</div>
 
         Second, it is inversely proportional the wavelength of the particle,
-        $$k = \frac{2 \pi}{\lambda}$$
+        <div class="equation">$$k = \frac{2 \pi}{\lambda}$$</div>
 
         A negative \(k\) will result in momentum in the negative direction, and a positive \(k\) will result in momentum in a positive direction.
       </p>
@@ -293,7 +293,7 @@
 
       <p>
         One limitation of real computers is that numbers and operations are not always percise, as computers are constrained with how much memory they can assign to any given number. As we recursively apply our algorithm, numerical instability will arise, thus the condition we laid out at the very start of this article,
-        $$\int_{-\infty}^{\infty} |\psi(x, t)|^2 \,\partial{x} = 1$$
+        <div class="equation">$$\int_{-\infty}^{\infty} |\psi(x, t)|^2 \,\partial{x} = 1$$</div>
 
         may no longer hold true.
       </p>
@@ -301,23 +301,23 @@
       <p>
         In order to correct for this, after each application of our algorithm, we normalize \(\psi\). The process is as follows,
 
-        $$ \text{let } \psi_0 = \text{the resulting wave function after an iteration of our algorithm} $$
-        $$ \text{let } I = \int_{-\infty}^{\infty} |\psi_0(x, t)|^2 \,\partial{x} $$
+        <div class="equation">$$ \text{let } \psi_0 = \text{the resulting wave function after an iteration of our algorithm} $$</div>
+        <div class="equation">$$ \text{let } I = \int_{-\infty}^{\infty} |\psi_0(x, t)|^2 \,\partial{x} $$</div>
 
         We can rearrange this,
 
-        $$I^{-1}\int_{-\infty}^{\infty} |\psi_0(x, t)|^2 \,\partial{x} = 1$$
-        $$\int_{-\infty}^{\infty} \frac{|\psi_0(x, t)|^2}{I} \,\partial{x} = 1$$
+        <div class="equation">$$I^{-1}\int_{-\infty}^{\infty} |\psi_0(x, t)|^2 \,\partial{x} = 1$$</div>
+        <div class="equation">$$\int_{-\infty}^{\infty} \frac{|\psi_0(x, t)|^2}{I} \,\partial{x} = 1$$</div>
 
         Thus,
-        $$\int_{-\infty}^{\infty} \frac{|\psi_0(x, t)|^2}{I} \,\partial{x} = \int_{-\infty}^{\infty} |\psi(x, t)|^2 \,\partial{x} = 1$$
+        <div class="equation">$$\int_{-\infty}^{\infty} \frac{|\psi_0(x, t)|^2}{I} \,\partial{x} = \int_{-\infty}^{\infty} |\psi(x, t)|^2 \,\partial{x} = 1$$</div>
 
         Dropping the integrals,
-        $$\frac{|\psi_0(x, t)|^2}{I} = |\psi(x, t)|^2$$
-        $$\frac{|\psi_0(x, t)|}{\sqrt{I}} = |\psi(x, t)|$$
+        <div class="equation">$$\frac{|\psi_0(x, t)|^2}{I} = |\psi(x, t)|^2$$</div>
+        <div class="equation">$$\frac{|\psi_0(x, t)|}{\sqrt{I}} = |\psi(x, t)|$$</div>
 
         Since \(I \in \mathbb{R}\),
-        $$\frac{\psi_0(x, t)}{\sqrt{I}} = \psi(x, t)$$
+        <div class="equation">$$\frac{\psi_0(x, t)}{\sqrt{I}} = \psi(x, t)$$</div>
       </p>
 
       <p>
@@ -337,13 +337,13 @@
       <p>
         Let’s take an example, set our left most boundary (the negative direction) to \(0\), and then try to evaluate \(\psi(0, t + \Delta t)\),
 
-        $$
+        <div class="equation">$$
         \begin{aligned}
         \psi(0, t + \Delta t) &= \left(\frac{1}{2m} \right) \left(\frac{\Delta t}{{\Delta x}^2} \right) \left( \psi(\Delta x, t) - 2 \psi(0, t) + \psi(-\Delta x, t) \right) \\ 
         &- \left(\frac{i}{\hbar}\right)(\Delta t)V(0)\psi(0,t) \\
         &+ \psi(0,t)
         \end{aligned}
-        $$
+        $$</div>
 
         In order to find \(\psi(0, t + \Delta t)\), we need to know \(\psi(-\Delta x, t)\), however, since \(-\Delta x\ \lt 0\), \(-\Delta x\) is outside the bounds of the wave function. How do we handle this?
       </p>
