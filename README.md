@@ -12,7 +12,7 @@ This is done by recursively evalutating the following expression:
 
 $$
 \begin{aligned}
-\psi(x, t + \Delta t) &= \left(\frac{1}{2m} \right) \left(\frac{\Delta t}{{\Delta x}^2} \right) \left( \psi(x + \Delta x, t) - 2 \psi(x, t) + \psi(x - \Delta x, t) \right) \\
+\psi(x, t + \Delta t) &= \left(\frac{i}{2m} \right) \left(\frac{\Delta t}{{\Delta x}^2} \right) \left( \psi(x + \Delta x, t) - 2 \psi(x, t) + \psi(x - \Delta x, t) \right) \\
 &- \left(\frac{i}{\hbar}\right)(\Delta t)V(x)\psi(x,t) \\
 &+ \psi(x,t)
 \end{aligned}
