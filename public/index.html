@@ -78,7 +78,7 @@
       <p>
         It thus makes sense that \(|\psi(x, t)|^2\) should follow the same rules that probability distribution functions do. Specifically, the the sum of all probabilities that the particle is observed at any given point, must be equal to 100%, or
 
-        <div class="equation">$$\int_{-\infty}^{\infty} |\psi(x, t)|^2 \,\partial{x} = 1$$</div>
+        <div class="equation">$$\int_{-\infty}^{\infty} |\psi(x, t)|^2 \,dx = 1$$</div>
 
         We will use this property later on to increase the accuracy of our animations.
       </p>
@@ -302,7 +302,7 @@
 
       <p>
         One limitation of real computers is that numbers and operations are not always percise, as computers are constrained with how much memory they can assign to any given number. As we recursively apply our algorithm, numerical instability will arise, thus the condition we laid out at the very start of this article,
-        <div class="equation">$$\int_{-\infty}^{\infty} |\psi(x, t)|^2 \,\partial{x} = 1$$</div>
+        <div class="equation">$$\int_{-\infty}^{\infty} |\psi(x, t)|^2 \,dx = 1$$</div>
 
         may no longer hold true.
       </p>
@@ -311,15 +311,15 @@
         In order to correct for this, after each application of our algorithm, we normalize \(\psi\). The process is as follows,
 
         <div class="equation">$$ \text{let } \psi_0 = \text{the resulting wave function after an iteration of our algorithm} $$</div>
-        <div class="equation">$$ \text{let } I = \int_{-\infty}^{\infty} |\psi_0(x, t)|^2 \,\partial{x} $$</div>
+        <div class="equation">$$ \text{let } I = \int_{-\infty}^{\infty} |\psi_0(x, t)|^2 \,dx $$</div>
 
         We can rearrange this,
 
-        <div class="equation">$$I^{-1}\int_{-\infty}^{\infty} |\psi_0(x, t)|^2 \,\partial{x} = 1$$</div>
-        <div class="equation">$$\int_{-\infty}^{\infty} \frac{|\psi_0(x, t)|^2}{I} \,\partial{x} = 1$$</div>
+        <div class="equation">$$I^{-1}\int_{-\infty}^{\infty} |\psi_0(x, t)|^2 \,dx = 1$$</div>
+        <div class="equation">$$\int_{-\infty}^{\infty} \frac{|\psi_0(x, t)|^2}{I} \,dx = 1$$</div>
 
         Thus,
-        <div class="equation">$$\int_{-\infty}^{\infty} \frac{|\psi_0(x, t)|^2}{I} \,\partial{x} = \int_{-\infty}^{\infty} |\psi(x, t)|^2 \,\partial{x} = 1$$</div>
+        <div class="equation">$$\int_{-\infty}^{\infty} \frac{|\psi_0(x, t)|^2}{I} \,dx = \int_{-\infty}^{\infty} |\psi(x, t)|^2 \,dx = 1$$</div>
 
         Dropping the integrals,
         <div class="equation">$$\frac{|\psi_0(x, t)|^2}{I} = |\psi(x, t)|^2$$</div>
